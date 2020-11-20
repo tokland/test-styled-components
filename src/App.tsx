@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Select } from "antd";
+import { SelectProps } from "antd/lib/select";
+import styled from "styled-components";
+import "antd/dist/antd.css";
+
+const { Option } = Select;
+
+const StyledSelect = <T extends {}>(props: SelectProps<T>) => {
+    const StyledComponent = styled<React.FC<SelectProps<T>>>(
+        (Select as unknown) as React.FC<SelectProps<T>>
+    )`
+        color: red;
+    `;
+    return <StyledComponent {...props} />;
+};
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <StyledSelect defaultValue="lucy" style={{ width: 120 }} onChange={console.log}>
+                <Option value="jack">Jack</Option>
+                <Option value="lucy">Lucy</Option>
+                <Option value="disabled" disabled>
+                    Disabled
+                </Option>
+                <Option value="Yiminghe">yiminghe</Option>
+            </StyledSelect>
+        </div>
+    );
 }
 
 export default App;

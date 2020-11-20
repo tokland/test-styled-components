@@ -6,10 +6,12 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "antd": "^4.8.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0-next.77",
-    "typescript": "^4.0.3",
+    "styled-components": "^5.2.1",
+    "typescript": "4.1.0-dev.20200915",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -34,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.4"
   }
 }
